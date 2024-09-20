@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image';
-import finbuilderlogo from '../../../../public/finbuilder logo.png'
+import finbuilderlogo from '../../../public/finbuilder logo.png'
 // import Router from 'next/router';
 import { useRouter,usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';

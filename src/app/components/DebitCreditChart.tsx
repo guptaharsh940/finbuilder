@@ -25,8 +25,6 @@ interface ChartDataItem {
 
 export default function DebitCreditChart() {
     const [chartData, setChartData] = React.useState<ChartDataItem[]>([]);
-    const [totalDebit, setTotalDebit] = React.useState(0);
-    const [totalCredit, setTotalCredit] = React.useState(0);
 
     React.useEffect(() => {
         const fetchBarChartData = async () => {
@@ -39,18 +37,18 @@ export default function DebitCreditChart() {
 
                 setChartData(data);
 
-                // Calculate total debit and credit
-                const total = data.reduce(
-                    (acc, { debit, credit }) => {
-                        acc.debit += debit;
-                        acc.credit += credit;
-                        return acc;
-                    },
-                    { debit: 0, credit: 0 } as { debit: number; credit: number }
-                );
+                // // Calculate total debit and credit
+                // const total = data.reduce(
+                //     (acc, { debit, credit }) => {
+                //         acc.debit += debit;
+                //         acc.credit += credit;
+                //         return acc;
+                //     },
+                //     { debit: 0, credit: 0 } as { debit: number; credit: number }
+                // );
 
-                setTotalDebit(total.debit);
-                setTotalCredit(total.credit);
+                // setTotalDebit(total.debit);
+                // setTotalCredit(total.credit);
             } catch (error) {
                 console.error('Error fetching bar chart data:', error);
             }

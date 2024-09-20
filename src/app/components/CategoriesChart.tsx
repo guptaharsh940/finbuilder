@@ -38,10 +38,15 @@ const chartConfig: ChartConfig = {
         color: "hsl(240, 100%, 50%)", // Purple
     },
 };
+type ChartDataItem = {
+    category: string;
+    amount: number;
+    fill: string;
+};
 
 export default function CategoriesChart() {
-    const [chartData, setChartData] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [chartData, setChartData] = useState<ChartDataItem[]>([]);
+    // const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
@@ -56,9 +61,7 @@ export default function CategoriesChart() {
                 setChartData(data.data); // Extracting the data array
             } catch (error) {
                 setError(error instanceof Error ? error.message : 'Unknown error');
-            } finally {
-                setLoading(false);
-            }
+            } 
         };
 
         fetchPieData();

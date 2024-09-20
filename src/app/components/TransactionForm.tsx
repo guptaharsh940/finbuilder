@@ -37,7 +37,7 @@ const formSchema = z.object({
     amount: z.string().transform((v) => Number(v)||0)
 })
 
-export function TransactionForm() {
+export default function TransactionForm() {
     // 2. Initialize form with default values and zod validation
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),

@@ -1,17 +1,16 @@
 'use client'
 import React, { useState } from 'react'
-import { TransactionForm } from '../components/TransactionForm/page'
+import  TransactionForm  from '../components/TransactionForm'
 import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
 import { Button } from '@/components/ui/button'
-import TransactionTable from '../components/TransactionTable/page'
-const yourdata = () => {
+import TransactionTable from '../components/TransactionTable'
+const Yourdata = () => {
     const [formVisible, setFormVisible] = useState(false);
     return (
 
@@ -47,4 +46,4 @@ const yourdata = () => {
     )
 }
 
-export default yourdata
+export default Yourdata
