@@ -45,7 +45,13 @@ const TransactionTable: React.FC = () => {
             }
         };
 
-        fetchTransactions();
+        const timeoutId = setTimeout(() => {
+            fetchTransactions();
+        }, 2000); // Delay by 1 second (1000 ms)
+    
+        return () => {
+            clearTimeout(timeoutId); // Cleanup timeout if component unmounts
+        };
     });
 
     if (loading) {
